@@ -16,12 +16,12 @@ app.use(morgan('dev'));
 
 app.use(express.json())
 
-app.use('/api/v1/category', categoryRouter)
 
-
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Api is running...!')
 })
+
+app.use('/api/v1/category', categoryRouter)
 
 
 app.use(notFound)
